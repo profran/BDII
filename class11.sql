@@ -18,7 +18,6 @@ LEFT JOIN rental ON
 WHERE
 	rental.inventory_id IS NULL;
 
-
 --3
 SELECT
 	customer.first_name,
@@ -62,6 +61,7 @@ INNER JOIN country ON
 	city.country_id = country.country_id
 GROUP BY
 	customer.store_id, staff.staff_id;
+	
 --5
 SELECT
 	CONCAT_WS(" ", a.first_name, a.last_name) as "Name",
