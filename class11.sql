@@ -62,3 +62,16 @@ INNER JOIN country ON
 	city.country_id = country.country_id
 GROUP BY
 	customer.store_id, staff.staff_id;
+--5
+SELECT
+	CONCAT_WS(" ", a.first_name, a.last_name) as "Name",
+	COUNT(fa.actor_id) as cnt
+FROM
+	film_actor fa
+INNER JOIN actor a
+		USING (actor_id)
+GROUP BY
+	fa.actor_id
+ORDER BY
+	cnt DESC
+LIMIT 1;
